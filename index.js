@@ -16,7 +16,6 @@ const connect = async () => {
     }
 }
 
-
 app.listen(3000, () => {
     connect();
     console.log(`Listening on port 3000`);
