@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/", async (req,res) => {
 
-    const hotel = new Hotel();
+    const hotel = new Hotel(req.body);
 
     try{
         const savedHotel = await hotel.save();
