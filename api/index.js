@@ -2,9 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoute from "./routes/auth.js";
-import hotelsRoute from "./routes/auth.js";
-import hotelsRoomsRoute from "./routes/auth.js";
-import usersRoute from "./routes/auth.js";
+import hotelsRoute from "./routes/hotels.js";
+import hotelsRoomsRoute from "./routes/hotelrooms.js";
+import usersRoute from "./routes/users.js";
 
 const app = express();
 
@@ -20,10 +20,13 @@ const connect = async () => {
     }
 }
 
+
+app.use(express.json());
+
 app.use("/api/auth", authRoute);
-app.use("/api/hotels", authRoute);
-app.use("/api/hotelrooms", authRoute);
-app.use("/api/users", authRoute);
+app.use("/api/hotels", hotelsRoute);
+app.use("/api/hotelrooms", hotelsRoomsRoute);
+app.use("/api/users", usersRoute);
 
 app.listen(3000, () => {
     connect();
