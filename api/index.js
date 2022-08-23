@@ -20,13 +20,20 @@ const connect = async () => {
     }
 }
 
-
+// Middlewares
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/hotels", hotelsRoute);
 app.use("/api/hotelrooms", hotelsRoomsRoute);
 app.use("/api/users", usersRoute);
+
+// Error-handling Middleware
+app.use((error, req, res, next) => {
+    const errorStatus = error.status || 500;
+    const errorMsg = error.message || "Error, something went wrong!"
+    return res.status(errorStatus).json(errorMsg);
+})
 
 app.listen(3000, () => {
     connect();
