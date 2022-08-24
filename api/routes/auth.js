@@ -4,6 +4,6 @@ import { registerUser } from "../controllers/authController.js";
 const router = express.Router();
 
 //Create User route
-router.get("/register", registerUser)
+router.post("/register", registerUser);
 
 export default router;
