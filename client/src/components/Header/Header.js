@@ -80,6 +80,34 @@ const Header = () => {
               <span className='searchText'>
                 {`${roomOptions.adults} adult · ${roomOptions.children} children · ${roomOptions.rooms} room`} 
               </span>
+              <div className='roomOptions'>
+                <div className='optionItem'>
+                  <span className='optionText'>Adult</span>
+                  <div className='optionCounter'>
+                    <button className='counterButton'>+</button>
+                    <span className='counterNumber'>1</span>
+                    <button className='counterButton'>-</button>
+                  </div>
+                </div>
+
+                <div className='optionItem'>
+                  <span className='optionText'>Children</span>
+                  <div className='optionCounter'>
+                    <button className='counterButton'>+</button>
+                    <span className='counterNumber'>0</span>
+                    <button className='counterButton'>-</button>
+                  </div>
+                </div>
+
+                <div className='optionItem'>
+                  <span className='optionText'>Room</span>
+                  <div className='optionCounter'>
+                    <button className='counterButton'>+</button>
+                    <span className='counterNumber'>1</span>
+                    <button className='counterButton'>-</button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className='searchItem'>
