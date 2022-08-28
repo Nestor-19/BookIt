@@ -71,10 +71,15 @@
 .searchInput{
     border: none;
     outline: none;
-    color: #2b2d42;
+    color: #adb5bd;
 }
 
 .searchText{
-    color: #2b2d42;
+    color: #adb5bd;
     cursor: pointer;
+}
+
+.dateRange{
+    position: absolute;
+    top: 50px;
 }

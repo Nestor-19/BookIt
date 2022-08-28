@@ -1,10 +1,31 @@
-import React from 'react';
+import { useState } from 'react';
 import './Header.css';
+import 'react-date-range/dist/styles.css'; 
+import 'react-date-range/dist/theme/default.css'; 
 import {FaPlane, FaCarAlt, FaCalendarAlt} from "react-icons/fa";
 import {MdAttractions, MdLocalTaxi} from "react-icons/md";
 import {IoBedSharp, IoPerson} from "react-icons/io5";
+import { DateRange} from 'react-date-range';
+import { format } from 'date-fns';
 
 const Header = () => {
+
+  const [openCalendar, setOpenCalendar] = useState(false);
+
+  const [currentDate, setCurrentDate] = useState([{
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection'
+    }])
+
+  const [openOptions, setOpenOptions] = useState(false);
+
+  const [roomOptions, setRoomOptions] = useState({
+      adults: 1,
+      children: 0,
+      rooms: 1
+  })
+
   return (
     <div className='header'>
       <div className='headerContainer'>
@@ -39,14 +60,28 @@ const Header = () => {
               <IoBedSharp className='icons'/>
               <input type="text" placeholder='Where are you going?' className='searchInput'/>
             </div>
+
             <div className='searchItem'>
               <FaCalendarAlt className='icons'/>
-              <span className='searchText'> Check-in - Check-out</span>
+              <span className='searchText' onClick={() => setOpenCalendar(!openCalendar)}>
+                {`${format(currentDate[0].startDate, "MM/dd/yyyy")} to ${format(currentDate[0].endDate, "MM/dd/yyyy")} `}
+              </span>
+              {openCalendar && <DateRange 
+              editableDateInputs = {true} 
+              onChange = {item => setCurrentDate([item.selection])}
+              moveRangeOnFirstSelection = {false}
+              ranges = {currentDate}
+              className="dateRange"
+              />}
             </div>
+
             <div className='searchItem'>
               <IoPerson className='icons'/>
-              <span className='searchText'> 2 adults 0 children 1 room</span>
+              <span className='searchText'>
+                {`${roomOptions.adults} adult · ${roomOptions.children} children · ${roomOptions.rooms} room`} 
+              </span>
             </div>
+
             <div className='searchItem'>
               <button className='searchButton'>Search</button>
             </div>
