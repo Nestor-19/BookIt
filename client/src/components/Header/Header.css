@@ -109,3 +109,21 @@
     font-size: 12px;
     color: black;
 }
+
+.counterButton{
+    height: 30px;
+    width: 30px;
+    border-radius: 2px;
+    color: #006d77;
+    border: 2px solid #073b4c;
+    background-color: white;
+    cursor: pointer;
+}
+
+.counterButton:hover{
+    background-color: #cbf3f0;
+}
+
+.counterButton:disabled {
+    cursor: not-allowed;
+}
