@@ -13,6 +13,10 @@
     max-width: 1024px;
 }
 
+.headerContainer.listMode{
+    margin: 20px 0px 0px 0px;
+}
+
 .headerList{
     display: flex;
     gap: 40px;
