@@ -6,6 +6,7 @@ import Cities from '../../components/Cities/Cities';
 import Properties from '../../components/Properties/Properties';
 import SuggestedHomes from '../../components/SuggestedHomes/SuggestedHomes';
 import MailingList from '../../components/MailingList/MailingList';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
                 <h1 className='homeTitle'>Homes guests love</h1>
                 <SuggestedHomes />
                 <MailingList />
+                <Footer />
             </div>
         </div>
     )
