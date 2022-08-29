@@ -7,10 +7,15 @@ import {MdAttractions, MdLocalTaxi} from "react-icons/md";
 import {IoBedSharp, IoPerson} from "react-icons/io5";
 import { DateRange} from 'react-date-range';
 import { format } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 
 const Header = (props) => {
 
+  const currDate = new Date();
+
   const [openCalendar, setOpenCalendar] = useState(false);
+
+  const [destination, setDestination] = useState("");
 
   const [currentDate, setCurrentDate] = useState([{
       startDate: new Date(),
@@ -30,6 +35,12 @@ const Header = (props) => {
     setRoomOptions(prev => {return {
       ...prev, [optionName]: optionOperation === "i" ? roomOptions[optionName] + 1 : roomOptions[optionName] - 1
     }})
+  }
+
+  const navigate = useNavigate()
+
+  const handleSearchClick = () => {
+    navigate('/hotels', {state: {destination, currentDate, roomOptions}});
   }
 
   return (
@@ -66,7 +77,7 @@ const Header = (props) => {
           <div className='search'>
               <div className='searchItem'>
                 <IoBedSharp className='icons'/>
-                <input type="text" placeholder='Where are you going?' className='searchInput'/>
+                <input onChange={event => setDestination(event.target.value)} type="text" placeholder='Where are you going?' className='searchInput'/>
               </div>
 
               <div className='searchItem'>
@@ -78,6 +89,7 @@ const Header = (props) => {
                 editableDateInputs = {true} 
                 onChange = {item => setCurrentDate([item.selection])}
                 moveRangeOnFirstSelection = {false}
+                minDate={currDate}
                 ranges = {currentDate}
                 className="dateRange"
                 />}
@@ -120,7 +132,7 @@ const Header = (props) => {
               </div>
 
               <div className='searchItem'>
-                <button className='searchButton'>Search</button>
+                <button className='searchButton' onClick={handleSearchClick}>Search</button>
               </div>
           </div>
         </>}
