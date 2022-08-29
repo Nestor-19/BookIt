@@ -1,6 +1,9 @@
 import './Footer.css';
 
 const Footer = () => {
+  const d = new Date();
+  let currentYear = d.getFullYear();
+
   return (
     <div className='footer'>
         <div className='footerLists'>
@@ -40,7 +43,7 @@ const Footer = () => {
             </ul>
         </div>
 
-        <div className='copyrightText'>Copyright © 2022 BookIt</div>
+        <div className='copyrightText'>Copyright © {currentYear} BookIt</div>
     </div>
   )
 }
