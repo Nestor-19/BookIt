@@ -1,0 +1,109 @@
+.item{
+    padding: 10px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+    gap: 20px;
+    border: 1px solid #006d77;
+    margin-bottom: 15px;
+}
+
+
+.itemImage{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.itemDescription{
+    flex: 2;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.itemTitle{
+    font-size: 20px;
+
+}
+
+.itemDistance{
+    font-size: 12px;
+}
+
+.itemDeal{
+    width: max-content;
+    color: white;
+    font-size: 12px;
+    background-color: #008009;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.itemSubtitle{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.itemFeatures{
+    font-size: 12px;
+}
+
+.itemCancelSubtitle{
+    font-size: 12px;
+    color: #008009
+}
+
+.itemCancel{
+    font-weight: bold;
+    font-size: 12px;
+    color: #008009
+}
+
+.ratingContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ratingContainer>span{
+    font-weight: 400;
+}
+
+.ratingContainer>button{
+    padding: 3px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    background-color: #cbf3f0;
+}
+
+.itemDetailsText{
+    gap: 5px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.price{
+    font-size: 24px;
+}
+
+.itemTax{
+    font-size: 12px;
+}
+
+.itemCheckButton{
+    cursor: pointer;
+    padding: 10px 5px;
+    background-color: #cbf3f0;
+    font-weight: bold;
+    border-radius: 5px;
+}

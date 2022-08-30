@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import Header from '../../components/Header/Header'
 import { useLocation } from 'react-router-dom'
 import { DateRange } from 'react-date-range';
+import Items from '../../components/Items/Items';
 
 
 const HotelList = () => {
@@ -74,6 +75,7 @@ const HotelList = () => {
 
             </div>
             <div className='hlResult'>
+              <Items />
             </div>
         </div>
       </div>
