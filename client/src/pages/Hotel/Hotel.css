@@ -1,0 +1,119 @@
+.hotelContainer{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.hWrapper{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1024px;
+    position: relative;
+}
+
+
+.hImageWrapper{
+    width: 33%;
+}
+
+.hImage{
+    object-fit: cover;
+    width: 100%;
+}
+
+.hTitle{
+    font-size: 25px;
+}
+
+.hAddress{
+    font-size: 12px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.hDistance{
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+.hPrice{
+    font-weight: bold;
+    color: green;
+}
+
+.hImages{
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hButton{
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #006d77;
+    color: white;
+    padding: 10px 18px;
+    font-weight: bold;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border: none;
+}
+
+.hDetails{
+    display: flex;
+    gap: 22px;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.hDetailText{
+    flex: 3;
+}
+
+.hDetailPrice{
+    flex: 1;
+    padding: 15px;
+    gap: 10px;
+    background-color: #a2e4de;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hDetailPrice>h1{
+    font-size: 20px;
+}
+
+.hDetailPrice>span{
+    font-size: 15px;
+}
+
+.hDetailPrice>h2{
+    font-weight: normal;
+}
+
+.hDescription{
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.hReserve{
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #006d77;
+    color: white;
+    padding: 10px 18px;
+    font-weight: bold;
+    border-radius: 3px;
+    top: 10px;
+    right: 0;
+    border: none;
+
+}
