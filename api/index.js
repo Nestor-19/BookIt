@@ -5,6 +5,7 @@ import authRoute from "./routes/auth.js";
 import hotelsRoute from "./routes/hotels.js";
 import hotelsRoomsRoute from "./routes/hotelrooms.js";
 import usersRoute from "./routes/users.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
@@ -21,6 +22,7 @@ const connect = async () => {
 }
 
 // Middlewares
+app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
